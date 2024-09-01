@@ -45,12 +45,12 @@ The Arduino sketch does the following:
 - Frame ID: 0x123
 - Data Length: 4 bytes
 - Byte 0-1: RPM (16-bit integer)
-- Byte 2-3: Speed (16-bit integer, speed * 100 for two decimal places)
+- Byte 2-3: Speed (16-bit integer, speed * 10 for one decimal places)
 
 ## Customization
 
-- Adjust `wheelCircumference` in the code to match your specific wheel size.
-- Modify `PulsesPerRevolution` if your RPM sensor gives a different number of pulses per revolution.
+- Adjust `WHEEL_DIAMETER` in the code to match your specific wheel size.
+- Modify `PULSES_PER_REVOLUTION` if your RPM sensor gives a different number of pulses per revolution.
 
 ## Troubleshooting
 

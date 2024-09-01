@@ -1,0 +1,14 @@
+-rootPath
+/home/kraken/sandbox/Dashboard
+-cmake-output
+-output-file
+/home/kraken/sandbox/Dashboard/build/RPI-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appDashboard.cmake
+-importPath
+/home/kraken/sandbox/Dashboard/build/RPI-Debug/Dashboard
+-importPath
+/home/kraken/sandbox/Dashboard/build/RPI-Debug
+-importPath
+/home/kraken/qt6/pi/./qml
+-qrcFiles
+/home/kraken/sandbox/Dashboard/build/RPI-Debug/.rcc/qmake_Dashboard.qrc
+/home/kraken/sandbox/Dashboard/build/RPI-Debug/.rcc/appDashboard_raw_qml_0.qrc

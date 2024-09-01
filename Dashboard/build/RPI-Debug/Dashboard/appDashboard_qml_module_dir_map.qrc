@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/Dashboard">/home/kraken/sandbox/Dashboard/build/RPI-Debug/Dashboard</file>
+
+  </qresource>
+</RCC>

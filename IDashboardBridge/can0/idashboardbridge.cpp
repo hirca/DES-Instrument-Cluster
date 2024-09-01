@@ -82,7 +82,7 @@ void IDashboardBridge::processCANFrame(const QCanBusFrame &frame)
 {
     if (frame.frameId() == CAN_FRAME_ID && frame.payload().size() >= 4) {
         int newRPM = (frame.payload()[0] << 8) | frame.payload()[1];
-        float newSpeed = ((frame.payload()[2] << 8) | frame.payload()[3]) / 100.0;
+        float newSpeed = ((frame.payload()[2] << 8) | frame.payload()[3]) / 10.0;
 
         if (m_rpm != newRPM) {
             m_rpm = newRPM;

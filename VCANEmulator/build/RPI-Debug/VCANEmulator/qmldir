@@ -1,0 +1,9 @@
+module VCANEmulator
+typeinfo appVCANEmulator.qmltypes
+prefer :/qt/qml/VCANEmulator/
+Main 1.0 Main.qml
+SpeedControl 1.0 SpeedControl.qml
+RPMControl 1.0 RPMControl.qml
+GearControl 1.0 GearControl.qml
+BatteryControl 1.0 BatteryControl.qml
+

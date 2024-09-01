@@ -1,0 +1,268 @@
+{
+    "classes": [
+        {
+            "className": "CANBusDataManager",
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "speedCANId",
+                    "notify": "speedCANIdChanged",
+                    "read": "speedCANId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setSpeedCANId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "rpmCANId",
+                    "notify": "rpmCANIdChanged",
+                    "read": "rpmCANId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setRpmCANId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "gearCANId",
+                    "notify": "gearCANIdChanged",
+                    "read": "gearCANId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setGearCANId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "batteryCANId",
+                    "notify": "batteryCANIdChanged",
+                    "read": "batteryCANId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setBatteryCANId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "isRunning",
+                    "notify": "isRunningChanged",
+                    "read": "isRunning",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "speedUpdateInterval",
+                    "notify": "speedUpdateIntervalChanged",
+                    "read": "speedUpdateInterval",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setSpeedUpdateInterval"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "rpmUpdateInterval",
+                    "notify": "rpmUpdateIntervalChanged",
+                    "read": "rpmUpdateInterval",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setRpmUpdateInterval"
+                }
+            ],
+            "qualifiedClassName": "CANBusDataManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "speedCANIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "rpmCANIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "gearCANIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "batteryCANIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "isRunningChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "speedUpdateIntervalChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "rpmUpdateIntervalChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "min",
+                            "type": "int"
+                        },
+                        {
+                            "name": "max",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "setSpeedRange",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "increasing",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "setSpeedProfile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "step",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "setSpeedStepSize",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "min",
+                            "type": "int"
+                        },
+                        {
+                            "name": "max",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "setRPMRange",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "increasing",
+                            "type": "bool"
+                        }
+                    ],
+                    "name": "setRPMProfile",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "step",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "setRPMStepSize",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "gear",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "setGear",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "level",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "setBatteryLevel",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "start",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "stop",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "canbusdatamanager.h",
+    "outputRevision": 68
+}

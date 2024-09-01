@@ -1,0 +1,1 @@
+/home/kraken/sandbox/Dashboard/build/RPI-Debug/appDashboard_autogen/include/../EWIEGA46WW/moc_idashboardbridge.cpp.json

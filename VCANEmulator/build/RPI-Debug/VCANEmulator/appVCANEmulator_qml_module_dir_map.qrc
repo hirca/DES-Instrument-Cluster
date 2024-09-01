@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/VCANEmulator">/home/kraken/sandbox/VCANEmulator/build/RPI-Debug/VCANEmulator</file>
+
+  </qresource>
+</RCC>

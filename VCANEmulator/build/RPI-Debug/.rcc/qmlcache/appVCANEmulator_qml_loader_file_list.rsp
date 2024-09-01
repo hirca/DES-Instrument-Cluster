@@ -1,0 +1,5 @@
+/qt/qml/VCANEmulator/Main.qml
+/qt/qml/VCANEmulator/SpeedControl.qml
+/qt/qml/VCANEmulator/RPMControl.qml
+/qt/qml/VCANEmulator/GearControl.qml
+/qt/qml/VCANEmulator/BatteryControl.qml
