@@ -38,7 +38,7 @@
 #define WHEEL_DIAMETER (0.065F)                 /**< Wheel diameter in meters */
 #define PI (3.14159F)                           /**< Value of pi for calculations */
 #define SERIAL_BAUD_RATE ((uint32_t)115200U)    /**< Baud rate for serial communication */
-#define RPM_SENSOR_PIN ((uint8_t)2U)            /**< Digital pin number for the RPM sensor */
+#define RPM_SENSOR_PIN ((uint8_t)3U)            /**< Digital pin number for the RPM sensor */
 #define UPDATE_INTERVAL ((uint32_t)100U)        /**< Update interval in milliseconds */
 #define CAN_CS_PIN ((uint8_t)10U)               /**< CS pin for MCP2515 */
 #define CAN_MESSAGE_ID ((uint32_t)0x123U)       /**< CAN message ID for RPM and speed data */
