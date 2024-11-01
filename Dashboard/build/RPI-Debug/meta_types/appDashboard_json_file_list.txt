@@ -1,1 +1,2 @@
-/home/kraken/sandbox/Dashboard/build/RPI-Debug/appDashboard_autogen/include/../EWIEGA46WW/moc_idashboardbridge.cpp.json
+/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/appDashboard_autogen/include/../EWIEGA46WW/moc_canreader.cpp.json
+/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/appDashboard_autogen/include/../EWIEGA46WW/moc_i2cina219.cpp.json

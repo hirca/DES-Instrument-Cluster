@@ -3,8 +3,8 @@
 #include <QQmlContext>
 #include <QFontDatabase>
 #include <QFont>
-#include "idashboardbridge.h"
-
+#include "i2cina219.h"
+#include "canreader.h"
 
 
 int main(int argc, char *argv[])
@@ -17,8 +17,12 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
-    IDashboardBridge idashboardBridge;
-    engine.rootContext()->setContextProperty("idashboardBridge", &idashboardBridge);
+    I2CIna219 battery;
+    CANReader canReader;
+    engine.rootContext()->setContextProperty("canReader", &canReader);
+    engine.rootContext()->setContextProperty("battery", &battery);
+    // IDashboardBridge idashboardBridge;
+    // engine.rootContext()->setContextProperty("idashboardBridge", &idashboardBridge);
 
     QObject::connect(
         &engine,

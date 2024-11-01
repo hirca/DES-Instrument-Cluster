@@ -25,10 +25,6 @@ Item {
     property real startAngle: -180 // Starting angle for the needle
     property real endAngle: 135 // Ending angle for the needle
 
-    // EMA filter properties
-    property real filteredValue: value
-    property real emaAlpha: 0.2 // Adjust this value to change filter responsiveness (0.1 to 0.3 is a good range)
-
     property int speedLabelIncrement: 20
     property int numLabels: Math.floor((maxValue - minValue) / speedLabelIncrement) + 1
     property real labelRadiusFactor: 0.275
@@ -42,16 +38,6 @@ Item {
         { endSpeed: maxValue, color: "#c72c41" } // #c72c41
     ]
 
-
-    // Apply EMA filter when value changes
-    onValueChanged: {
-        filteredValue = applyEMAFilter(value, filteredValue, emaAlpha)
-    }
-
-    // EMA filter function
-    function applyEMAFilter(newValue, oldValue, alpha) {
-        return alpha * newValue + (1 - alpha) * oldValue
-    }
 
     /**
      * @brief Bound speed value between min and max values
@@ -134,13 +120,13 @@ Item {
             id: needleRotation
             origin.x: needle.width / 2
             origin.y: needle.height
-            angle: speedToAngle(root.filteredValue) // Use filteredValue instead of value
-            Behavior on angle {
-                SpringAnimation {
-                    spring: 1.4
-                    damping: 0.15
-                }
-            }
+            angle: speedToAngle(root.value)
+            // Behavior on angle {
+            //     SpringAnimation {
+            //         spring: 1.4
+            //         damping: 0.15
+            //     }
+            // }
         }
     }
 
@@ -186,10 +172,4 @@ Item {
         text: qsTr("%1").arg(speedBound(angleToSpeed(needleRotation.angle)))
     }
 
-    // Smooth transition for filteredValue changes
-    Behavior on filteredValue {
-        SmoothedAnimation {
-            duration: 300
-        }
-    }
 }

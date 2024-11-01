@@ -13,6 +13,7 @@ import QtQuick.Controls
 Window {
     id: root
     visible: true
+    visibility: Window.FullScreen
     width: 1024
     height: 576
     minimumWidth: 800
@@ -21,7 +22,7 @@ Window {
     color: "#010e1b"
 
     readonly property real aspectRatio: 16.9 / 9.2
-    property bool isDataSourceAvailable: idashboardBridge !== null && idashboardBridge !== undefined
+    //property bool isDataSourceAvailable: idashboardBridge !== null && idashboardBridge !== undefined
 
 
     // Frame Container
@@ -50,7 +51,7 @@ Window {
                 Layout.preferredHeight: parent.height * 0.1825
 
                 // Header Properties
-                userName: "User"
+                userName: "Hakan"
                 signalStrength: 3
             }
 
@@ -70,7 +71,8 @@ Window {
                         Layout.fillHeight: true
 
                         // Speedometer properties
-                        value: isDataSourceAvailable ? idashboardBridge.speed : 0
+                        value: canReader.speed
+
                     }
 
                     // Battery Display
@@ -78,18 +80,8 @@ Window {
                         id: batteryDisplay
                         Layout.fillHeight: true
                         Layout.fillWidth: true
+                        chargeValue: battery.level
 
-                        // Battery Display properties
-                        chargeValue: isDataSourceAvailable ? idashboardBridge.batteryLevel : 0
-
-                        // // Add a connection to log when the chargeValue changes
-                        //   Connections {
-                        //       target: idashboardBridge
-                        //       function onBatteryLevelChanged() {
-                        //           console.log("Dashboard: Battery level changed to", idashboardBridge.batteryLevel)
-                        //           console.log("Dashboard: BatteryDisplay chargeValue is", batteryDisplay.chargeValue)
-                        //       }
-                        //   }
                     }
 
                     // Tachometer
@@ -98,7 +90,8 @@ Window {
                         Layout.fillHeight: true
 
                         // Tachometer properties
-                        value: idashboardBridge.rpm
+                        value: canReader.rpm
+
                     }
 
                 }
@@ -112,7 +105,7 @@ Window {
                 Layout.preferredHeight: parent.height * 0.1825
 
                 // Footer Properties
-                activeGear : idashboardBridge.gear
+                activeGear : canReader.gearState
 
             }
 

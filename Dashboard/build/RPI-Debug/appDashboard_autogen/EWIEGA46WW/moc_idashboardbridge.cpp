@@ -44,10 +44,8 @@ static constexpr auto qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS = QtMocHe
     "rpmChanged",
     "gearChanged",
     "batteryLevelChanged",
-    "processCANFrame",
-    "QCanBusFrame",
-    "frame",
     "initialize",
+    "processReceivedFrames",
     "speed",
     "rpm",
     "gear",
@@ -55,21 +53,19 @@ static constexpr auto qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS = QtMocHe
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[24];
     char stringdata0[17];
     char stringdata1[13];
     char stringdata2[1];
     char stringdata3[11];
     char stringdata4[12];
     char stringdata5[20];
-    char stringdata6[16];
-    char stringdata7[13];
+    char stringdata6[11];
+    char stringdata7[22];
     char stringdata8[6];
-    char stringdata9[11];
-    char stringdata10[6];
-    char stringdata11[4];
-    char stringdata12[5];
-    char stringdata13[13];
+    char stringdata9[4];
+    char stringdata10[5];
+    char stringdata11[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -81,14 +77,12 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS_t qt_m
         QT_MOC_LITERAL(31, 10),  // "rpmChanged"
         QT_MOC_LITERAL(42, 11),  // "gearChanged"
         QT_MOC_LITERAL(54, 19),  // "batteryLevelChanged"
-        QT_MOC_LITERAL(74, 15),  // "processCANFrame"
-        QT_MOC_LITERAL(90, 12),  // "QCanBusFrame"
-        QT_MOC_LITERAL(103, 5),  // "frame"
-        QT_MOC_LITERAL(109, 10),  // "initialize"
-        QT_MOC_LITERAL(120, 5),  // "speed"
-        QT_MOC_LITERAL(126, 3),  // "rpm"
-        QT_MOC_LITERAL(130, 4),  // "gear"
-        QT_MOC_LITERAL(135, 12)   // "batteryLevel"
+        QT_MOC_LITERAL(74, 10),  // "initialize"
+        QT_MOC_LITERAL(85, 21),  // "processReceivedFrames"
+        QT_MOC_LITERAL(107, 5),  // "speed"
+        QT_MOC_LITERAL(113, 3),  // "rpm"
+        QT_MOC_LITERAL(117, 4),  // "gear"
+        QT_MOC_LITERAL(122, 12)   // "batteryLevel"
     },
     "IDashboardBridge",
     "speedChanged",
@@ -96,10 +90,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSIDashboardBridgeENDCLASS_t qt_m
     "rpmChanged",
     "gearChanged",
     "batteryLevelChanged",
-    "processCANFrame",
-    "QCanBusFrame",
-    "frame",
     "initialize",
+    "processReceivedFrames",
     "speed",
     "rpm",
     "gear",
@@ -116,7 +108,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSIDashboardBridgeENDCLASS[] = {
        0,       // classname
        0,    0, // classinfo
        6,   14, // methods
-       4,   58, // properties
+       4,   56, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -129,8 +121,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSIDashboardBridgeENDCLASS[] = {
        5,    0,   53,    2, 0x06,    8 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       6,    1,   54,    2, 0x08,    9 /* Private */,
-       9,    0,   57,    2, 0x08,   11 /* Private */,
+       6,    0,   54,    2, 0x08,    9 /* Private */,
+       7,    0,   55,    2, 0x08,   10 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -139,14 +131,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSIDashboardBridgeENDCLASS[] = {
     QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void,
     QMetaType::Void,
 
  // properties: name, type, flags
-      10, QMetaType::Int, 0x00015001, uint(0), 0,
-      11, QMetaType::Int, 0x00015001, uint(1), 0,
-      12, QMetaType::QString, 0x00015001, uint(2), 0,
-      13, QMetaType::Int, 0x00015001, uint(3), 0,
+       8, QMetaType::Int, 0x00015001, uint(0), 0,
+       9, QMetaType::Int, 0x00015001, uint(1), 0,
+      10, QMetaType::QString, 0x00015001, uint(2), 0,
+      11, QMetaType::Int, 0x00015001, uint(3), 0,
 
        0        // eod
 };
@@ -176,10 +168,9 @@ Q_CONSTINIT const QMetaObject IDashboardBridge::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'batteryLevelChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'processCANFrame'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QCanBusFrame &, std::false_type>,
         // method 'initialize'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'processReceivedFrames'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -195,8 +186,8 @@ void IDashboardBridge::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 1: _t->rpmChanged(); break;
         case 2: _t->gearChanged(); break;
         case 3: _t->batteryLevelChanged(); break;
-        case 4: _t->processCANFrame((*reinterpret_cast< std::add_pointer_t<QCanBusFrame>>(_a[1]))); break;
-        case 5: _t->initialize(); break;
+        case 4: _t->initialize(); break;
+        case 5: _t->processReceivedFrames(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -244,6 +235,7 @@ void IDashboardBridge::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     } else if (_c == QMetaObject::ResetProperty) {
     } else if (_c == QMetaObject::BindableProperty) {
     }
+    (void)_a;
 }
 
 const QMetaObject *IDashboardBridge::metaObject() const

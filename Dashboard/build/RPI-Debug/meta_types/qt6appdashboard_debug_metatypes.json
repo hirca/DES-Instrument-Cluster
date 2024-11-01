@@ -2,7 +2,7 @@
     {
         "classes": [
             {
-                "className": "IDashboardBridge",
+                "className": "CANReader",
                 "object": true,
                 "properties": [
                     {
@@ -10,20 +10,6 @@
                         "designable": true,
                         "final": false,
                         "index": 0,
-                        "name": "speed",
-                        "notify": "speedChanged",
-                        "read": "speed",
-                        "required": false,
-                        "scriptable": true,
-                        "stored": true,
-                        "type": "int",
-                        "user": false
-                    },
-                    {
-                        "constant": false,
-                        "designable": true,
-                        "final": false,
-                        "index": 1,
                         "name": "rpm",
                         "notify": "rpmChanged",
                         "read": "rpm",
@@ -37,38 +23,33 @@
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 2,
-                        "name": "gear",
-                        "notify": "gearChanged",
-                        "read": "gear",
+                        "index": 1,
+                        "name": "speed",
+                        "notify": "speedChanged",
+                        "read": "speed",
                         "required": false,
                         "scriptable": true,
                         "stored": true,
-                        "type": "QString",
+                        "type": "double",
                         "user": false
                     },
                     {
                         "constant": false,
                         "designable": true,
                         "final": false,
-                        "index": 3,
-                        "name": "batteryLevel",
-                        "notify": "batteryLevelChanged",
-                        "read": "batteryLevel",
+                        "index": 2,
+                        "name": "gearState",
+                        "notify": "gearStateChanged",
+                        "read": "gearState",
                         "required": false,
                         "scriptable": true,
                         "stored": true,
-                        "type": "int",
+                        "type": "QString",
                         "user": false
                     }
                 ],
-                "qualifiedClassName": "IDashboardBridge",
+                "qualifiedClassName": "CANReader",
                 "signals": [
-                    {
-                        "access": "public",
-                        "name": "speedChanged",
-                        "returnType": "void"
-                    },
                     {
                         "access": "public",
                         "name": "rpmChanged",
@@ -76,30 +57,24 @@
                     },
                     {
                         "access": "public",
-                        "name": "gearChanged",
+                        "name": "speedChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "name": "batteryLevelChanged",
+                        "name": "gearStateChanged",
                         "returnType": "void"
                     }
                 ],
                 "slots": [
                     {
                         "access": "private",
-                        "arguments": [
-                            {
-                                "name": "frame",
-                                "type": "QCanBusFrame"
-                            }
-                        ],
-                        "name": "processCANFrame",
+                        "name": "processReceivedFrames",
                         "returnType": "void"
                     },
                     {
                         "access": "private",
-                        "name": "initialize",
+                        "name": "updateRPM",
                         "returnType": "void"
                     }
                 ],
@@ -111,7 +86,52 @@
                 ]
             }
         ],
-        "inputFile": "idashboardbridge.h",
+        "inputFile": "canreader.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
+                "className": "I2CIna219",
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "level",
+                        "notify": "batteryChanged",
+                        "read": "level",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "I2CIna219",
+                "signals": [
+                    {
+                        "access": "public",
+                        "name": "batteryChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "lowBatteryWarning",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "i2cina219.h",
         "outputRevision": 68
     }
 ]

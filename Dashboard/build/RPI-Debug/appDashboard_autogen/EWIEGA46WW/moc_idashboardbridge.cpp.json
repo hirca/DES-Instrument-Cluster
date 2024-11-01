@@ -87,18 +87,12 @@
             "slots": [
                 {
                     "access": "private",
-                    "arguments": [
-                        {
-                            "name": "frame",
-                            "type": "QCanBusFrame"
-                        }
-                    ],
-                    "name": "processCANFrame",
+                    "name": "initialize",
                     "returnType": "void"
                 },
                 {
                     "access": "private",
-                    "name": "initialize",
+                    "name": "processReceivedFrames",
                     "returnType": "void"
                 }
             ],

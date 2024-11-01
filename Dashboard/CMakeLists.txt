@@ -25,7 +25,8 @@ qt_add_qml_module(appDashboard
     QML_FILES Header.qml
     QML_FILES BatteryDisplay.qml
     QML_FILES Footer.qml
-    SOURCES idashboardbridge.h idashboardbridge.cpp
+    SOURCES i2cina219.h i2cina219.cpp
+    SOURCES canreader.h canreader.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -1567,8 +1567,8 @@ return r2_2;
 Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for verticalCenter at line 44, column 17
-QObject *r2_1;
 QVariant r2_2;
+QObject *r2_1;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadScopeObjectPropertyLookup(22, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -1731,9 +1731,9 @@ Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for pixelSize at line 60, column 21
 double r7_1;
-double r2_2;
 int r2_3;
 QObject *r2_1;
+double r2_2;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadContextIdLookup(33, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -1856,8 +1856,8 @@ return r2_2;
 Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for verticalCenter at line 78, column 17
-QVariant r2_2;
 QObject *r2_1;
+QVariant r2_2;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadScopeObjectPropertyLookup(43, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -1885,8 +1885,8 @@ return r2_2;
 Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for horizontalCenter at line 79, column 17
-QVariant r2_2;
 QObject *r2_1;
+QVariant r2_2;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadScopeObjectPropertyLookup(45, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -1932,8 +1932,8 @@ Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for preferredHeight at line 84, column 21
 double r7_1;
-double r2_2;
 QObject *r2_1;
+double r2_2;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadContextIdLookup(49, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -2032,9 +2032,9 @@ Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for pixelSize at line 91, column 21
 double r7_1;
+int r2_3;
 double r2_2;
 QObject *r2_1;
-int r2_3;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadContextIdLookup(57, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -2159,8 +2159,8 @@ Q_UNUSED(argumentsPtr)
 // expression for preferredWidth at line 100, column 21
 double r7_1;
 double r8_1;
-double r2_1;
 QVariant r2_2;
+double r2_1;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadScopeObjectPropertyLookup(65, &r2_1)) {
 aotContext->setInstructionPointer(2);
@@ -2243,9 +2243,9 @@ Q_UNUSED(aotContext)
 Q_UNUSED(argumentsPtr)
 // expression for pixelSize at line 116, column 21
 double r7_1;
-int r2_3;
-double r2_2;
 QObject *r2_1;
+double r2_2;
+int r2_3;
 // generate_LoadQmlContextPropertyLookup
 while (!aotContext->loadContextIdLookup(72, &r2_1)) {
 aotContext->setInstructionPointer(2);

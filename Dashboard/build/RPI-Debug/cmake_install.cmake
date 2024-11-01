@@ -1,4 +1,4 @@
-# Install script for directory: /home/kraken/sandbox/Dashboard
+# Install script for directory: /home/hhirca/DES-Instrument-Cluster/Dashboard
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,15 +47,15 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard"
-         RPATH "\$ORIGIN:\$ORIGIN/../lib:/home/kraken/qt6/pi/lib:/usr/lib/aarch64-linux-gnu")
+         RPATH "\$ORIGIN:\$ORIGIN/../lib:/home/hhirca/qt6/pi/lib:/usr/lib/aarch64-linux-gnu")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/kraken/sandbox/Dashboard/build/RPI-Debug/appDashboard")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/appDashboard")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard"
-         OLD_RPATH "/home/kraken/rpi-sysroot:/home/kraken/qt6/pi/lib:/usr/lib/aarch64-linux-gnu:"
-         NEW_RPATH "\$ORIGIN:\$ORIGIN/../lib:/home/kraken/qt6/pi/lib:/usr/lib/aarch64-linux-gnu")
+         OLD_RPATH "/home/hhirca/rpi-sysroot:/home/hhirca/qt6/pi/lib:/usr/lib/aarch64-linux-gnu:"
+         NEW_RPATH "\$ORIGIN:\$ORIGIN/../lib:/home/hhirca/qt6/pi/lib:/usr/lib/aarch64-linux-gnu")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/opt/cross-pi-gcc/bin/aarch64-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/appDashboard")
     endif()
@@ -65,7 +65,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/kraken/sandbox/Dashboard/build/RPI-Debug/install_local_manifest.txt"
+  file(WRITE "/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -81,6 +81,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/kraken/sandbox/Dashboard/build/RPI-Debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

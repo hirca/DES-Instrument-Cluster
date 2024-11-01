@@ -31,7 +31,7 @@ endif()
 set(__QT_DEPLOY_SYSTEM_NAME "Linux")
 set(__QT_DEPLOY_IS_SHARED_LIBS_BUILD "ON")
 set(__QT_DEPLOY_TOOL "")
-set(__QT_DEPLOY_IMPL_DIR "/home/kraken/sandbox/Dashboard/build/RPI-Debug/.qt")
+set(__QT_DEPLOY_IMPL_DIR "/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/.qt")
 set(__QT_DEPLOY_VERBOSE "")
 set(__QT_CMAKE_EXPORT_NAMESPACE "Qt6")
 set(__QT_DEPLOY_GENERATOR_IS_MULTI_CONFIG "0")
@@ -39,7 +39,7 @@ set(__QT_DEPLOY_ACTIVE_CONFIG "Debug")
 set(__QT_NO_CREATE_VERSIONLESS_FUNCTIONS "")
 set(__QT_DEFAULT_MAJOR_VERSION "6")
 set(__QT_DEPLOY_QT_ADDITIONAL_PACKAGES_PREFIX_PATH "")
-set(__QT_DEPLOY_QT_INSTALL_PREFIX "/home/kraken/qt6/pi")
+set(__QT_DEPLOY_QT_INSTALL_PREFIX "/home/hhirca/qt6/pi")
 set(__QT_DEPLOY_QT_INSTALL_BINS "bin")
 set(__QT_DEPLOY_QT_INSTALL_PLUGINS "./plugins")
 set(__QT_DEPLOY_QT_INSTALL_TRANSLATIONS "./translations")
@@ -50,8 +50,8 @@ set(__QT_DEPLOY_PATCHELF_EXECUTABLE "")
 
 # Define the CMake commands to be made available during deployment.
 set(__qt_deploy_support_files
-    "/home/kraken/qt6/pi/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
-    "/home/kraken/qt6/pi/lib/cmake/Qt6Qml/Qt6QmlDeploySupport.cmake"
+    "/home/hhirca/qt6/pi/lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake"
+    "/home/hhirca/qt6/pi/lib/cmake/Qt6Qml/Qt6QmlDeploySupport.cmake"
 )
 foreach(__qt_deploy_support_file IN LISTS __qt_deploy_support_files)
     include("${__qt_deploy_support_file}")

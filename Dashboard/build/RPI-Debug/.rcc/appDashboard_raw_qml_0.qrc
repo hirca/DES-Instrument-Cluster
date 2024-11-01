@@ -1,12 +1,12 @@
 <RCC>
   <qresource prefix="/qt/qml/Dashboard/">
-    <file alias="Dashboard.qml">/home/kraken/sandbox/Dashboard/Dashboard.qml</file>
-    <file alias="Speedometer.qml">/home/kraken/sandbox/Dashboard/Speedometer.qml</file>
-    <file alias="Tachometer.qml">/home/kraken/sandbox/Dashboard/Tachometer.qml</file>
-    <file alias="Header.qml">/home/kraken/sandbox/Dashboard/Header.qml</file>
-    <file alias="BatteryDisplay.qml">/home/kraken/sandbox/Dashboard/BatteryDisplay.qml</file>
-    <file alias="Footer.qml">/home/kraken/sandbox/Dashboard/Footer.qml</file>
-    <file alias="Resources.qrc">/home/kraken/sandbox/Dashboard/Resources.qrc</file>
+    <file alias="Dashboard.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/Dashboard.qml</file>
+    <file alias="Speedometer.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/Speedometer.qml</file>
+    <file alias="Tachometer.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/Tachometer.qml</file>
+    <file alias="Header.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/Header.qml</file>
+    <file alias="BatteryDisplay.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/BatteryDisplay.qml</file>
+    <file alias="Footer.qml">/home/hhirca/DES-Instrument-Cluster/Dashboard/Footer.qml</file>
+    <file alias="Resources.qrc">/home/hhirca/DES-Instrument-Cluster/Dashboard/Resources.qrc</file>
   </qresource>
 </RCC>
 

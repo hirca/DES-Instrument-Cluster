@@ -23,13 +23,13 @@ Item {
     // Customizable properties
     property real chargeValue: 0 // Battery charge percentage (0-100)
     property real rangeValue: 0 // Range in kilometers
-    property real rangeMax: 100 // Range in kilometers
+    property real rangeMax: 4.8 // Range in kilometers
 
 
     //Input validation
     onChargeValueChanged: {
         //chargeValue = Math.max(0, Math.min(100, chargeValue))
-        rangeValue = Math.floor(chargeValue * rangeMax * 0.01)
+        rangeValue = Math.floor(chargeValue * rangeMax * 0.1)
     }
 
     onRangeValueChanged: {

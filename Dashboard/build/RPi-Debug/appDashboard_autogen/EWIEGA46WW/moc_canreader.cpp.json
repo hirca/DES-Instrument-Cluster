@@ -1,0 +1,90 @@
+{
+    "classes": [
+        {
+            "className": "CANReader",
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "rpm",
+                    "notify": "rpmChanged",
+                    "read": "rpm",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "speed",
+                    "notify": "speedChanged",
+                    "read": "speed",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "gearState",
+                    "notify": "gearStateChanged",
+                    "read": "gearState",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "CANReader",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "rpmChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "speedChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "gearStateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "name": "processReceivedFrames",
+                    "returnType": "void"
+                },
+                {
+                    "access": "private",
+                    "name": "updateRPM",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "canreader.h",
+    "outputRevision": 68
+}
