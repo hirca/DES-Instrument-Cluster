@@ -1,22 +1,18 @@
 import QtQuick
 import QtQuick.Layouts
 
+/**
+ * @brief Header component
+ * Displays user information, date, time and system status
+ */
 Item {
     id: root
 
-    // Public properties
+    // Properties
     property string userName: "User"
-    property int signalStrength: 3 // 0-3, update this based on actual signal strength
+    property int signalStrength: 3  // 0-3 signal levels
 
-    // Private functions
-    function formatDate() {
-        return Qt.formatDateTime(new Date(), "dd MMM yyyy").toUpperCase()
-    }
-
-    function formatTime() {
-        return Qt.formatDateTime(new Date(), "hh:mm AP")
-    }
-
+    // Time management
     Timer {
         id: clockTimer
         interval: 1000
@@ -28,12 +24,22 @@ Item {
         }
     }
 
+    // Utility functions
+    function formatDate() {
+        return Qt.formatDateTime(new Date(), "dd MMM yyyy").toUpperCase()
+    }
+
+    function formatTime() {
+        return Qt.formatDateTime(new Date(), "hh:mm AP")
+    }
+
+    // Layout
     RowLayout {
         anchors.fill: parent
         anchors.bottomMargin: 0
         spacing: 0
 
-        // Left section - User greeting
+        // User greeting section
         Item {
             id: userGreeting
             Layout.alignment: Qt.AlignLeft | Qt.AlignBottom
@@ -61,13 +67,16 @@ Item {
                     color: "white"
                 }
 
-                Item { Layout.fillWidth: true } // Spacer
+                Item { Layout.fillWidth: true }
             }
         }
 
-        Item { Layout.fillWidth: true } // Center spacer
+        // Center spacer
+        Item { 
+            Layout.fillWidth: true 
+        }
 
-        // Right section - Weather, date, WiFi, and time
+        // Status information section
         Item {
             id: statusInfo
             Layout.alignment: Qt.AlignRight | Qt.AlignBottom
@@ -105,7 +114,8 @@ Item {
                         PropertyAnimation {
                             target: wifiIcon
                             property: "opacity"
-                            from: 0; to: 1
+                            from: 0
+                            to: 1
                             duration: 200
                         }
                     }

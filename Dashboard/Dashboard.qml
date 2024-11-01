@@ -5,13 +5,13 @@ import QtQuick.Controls
 
 /**
  * @brief Main Dashboard Window
- *
- * This component represents the main dashboard window, containing the speedometer,
- * battery display, and tachometer.
+ * Container for all dashboard components including speedometer,
+ * battery display, and tachometer
  */
-
 Window {
     id: root
+
+    // Window properties
     visible: true
     visibility: Window.FullScreen
     width: 1024
@@ -21,18 +21,17 @@ Window {
     title: qsTr("Dashboard")
     color: "#010e1b"
 
+    // Layout properties
     readonly property real aspectRatio: 16.9 / 9.2
-    //property bool isDataSourceAvailable: idashboardBridge !== null && idashboardBridge !== undefined
 
-
-    // Frame Container
+    // Main container
     Item {
         id: frame
         anchors.centerIn: parent
         width: Math.min(parent.width, parent.height * aspectRatio)
         height: width / aspectRatio
 
-        // Frame Background
+        // Background frame
         Image {
             anchors.fill: parent
             source: "qrc:/assets/img/frame.png"
@@ -40,77 +39,61 @@ Window {
             asynchronous: true
         }
 
+        // Main layout
         ColumnLayout {
             anchors.fill: parent
             spacing: 0
 
-            // Header Area
+            // Header section
             Header {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth: parent.width * 0.875
                 Layout.preferredHeight: parent.height * 0.1825
-
-                // Header Properties
                 userName: "Hakan"
                 signalStrength: 3
             }
 
-            // Content Area
+            // Content section
             Item {
                 Layout.preferredWidth: parent.width * 0.875
                 Layout.preferredHeight: parent.height * 0.635
                 Layout.alignment: Qt.AlignHCenter
 
-
                 RowLayout {
                     anchors.fill: parent
                     spacing: 0
 
+                    // Left section - Speedometer
                     Speedometer {
                         Layout.preferredWidth: parent.width * 0.35
                         Layout.fillHeight: true
-
-                        // Speedometer properties
                         value: canReader.speed
-
                     }
 
-                    // Battery Display
+                    // Center section - Battery Display
                     BatteryDisplay {
                         id: batteryDisplay
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         chargeValue: battery.level
-
                     }
 
-                    // Tachometer
+                    // Right section - Tachometer
                     Tachometer {
                         Layout.preferredWidth: parent.width * 0.35
                         Layout.fillHeight: true
-
-                        // Tachometer properties
                         value: canReader.rpm
-
                     }
-
                 }
-
             }
 
-            // Footer Area
+            // Footer section
             Footer {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth: parent.width * 0.875
                 Layout.preferredHeight: parent.height * 0.1825
-
-                // Footer Properties
-                activeGear : canReader.gearState
-
+                activeGear: canReader.gearState
             }
-
         }
     }
-
-
 }

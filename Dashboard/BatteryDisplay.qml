@@ -3,56 +3,55 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 /**
- * @brief BatteryDisplay component
- *
- * This component displays the battery charge level and range of an electric vehicle.
- *
- * Usage:
+ * @brief BatteryDisplay component for electric vehicle dashboard
+ * 
+ * Displays battery charge level and range information with visual indicators
+ * including a car silhouette, charging indicator, and range display.
+ * 
+ * Features:
+ * - Dynamic battery level indicator
+ * - Range calculation and display
+ * - Animated charging line
+ * - Glow effect for battery status
+ * 
+ * Example usage:
+ * ```qml
  * BatteryDisplay {
  *     width: 400
  *     height: 200
- *     chargeValue: 75
- *     rangeValue: 300
+ *     chargeValue: 75  // Battery percentage
  * }
+ * ```
  */
-
 Item {
     id: root
 
-
-    // Customizable properties
-    property real chargeValue: 0 // Battery charge percentage (0-100)
-    property real rangeValue: 0 // Range in kilometers
-    property real rangeMax: 4.8 // Range in kilometers
-
-
-    //Input validation
+    // Public properties
+    property real chargeValue: 0    /// Battery charge percentage (0-100)
+    property real rangeValue: 0     /// Current range in kilometers
+    property real rangeMax: 4.8     /// Maximum range in kilometers
+    
+    // Calculate range when charge value changes
     onChargeValueChanged: {
-        //chargeValue = Math.max(0, Math.min(100, chargeValue))
         rangeValue = Math.floor(chargeValue * rangeMax * 0.1)
     }
 
-    onRangeValueChanged: {
-
-    }
-
-
+    // Main layout container
     ColumnLayout {
         width: parent.width
         height: parent.height
+        spacing: 0
 
-        // The first row
+        // Range indicator section
         Item {
             id: rangeDisplay
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredHeight: 0.5
 
-
             RowLayout {
-
                 anchors.horizontalCenter: parent.horizontalCenter
-                spacing: 5  // Space between the image and text
+                spacing: 5
 
                 Text {
                     id: rangeText
@@ -67,29 +66,26 @@ Item {
                     height: rangeDisplay.height * 0.5
                     width: height
                     fillMode: Image.PreserveAspectFit
-                    //asynchronous: true
                     Layout.alignment: Qt.AlignVCenter
-                    source: "qrc:/assets/img/range.png" // Replace with your image path
+                    source: "qrc:/assets/img/range.png"
                     smooth: true
                 }
 
-
-
-                // This spacer ensures that the content stays centered
+                // Spacer for center alignment
                 Item {
                     Layout.fillWidth: true
                 }
             }
         }
 
-        // The second row
+        // Battery visualization section
         Item {
             id: batteryDisplayArea
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredHeight: 1
 
-
+            // Base car silhouette
             Image {
                 id: carImage
                 anchors.fill: parent
@@ -97,6 +93,7 @@ Item {
                 fillMode: Image.PreserveAspectFit
             }
 
+            // Battery glow effect
             Item {
                 id: glowContainer
                 anchors.fill: carImage
@@ -110,7 +107,7 @@ Item {
                 }
             }
 
-
+            // Charging indicator line
             Item {
                 id: needleContainer
                 anchors.fill: carImage
@@ -125,26 +122,21 @@ Item {
                 }
             }
 
+            // Battery percentage display
             Text {
                 id: chargePercentageText
                 anchors.centerIn: parent
                 text: qsTr("%1%").arg(Math.round(root.chargeValue))
                 font.pixelSize: Math.min(parent.width, parent.height) * 0.25
                 color: "white"
-                // Accessible.name: qsTr("Battery charge: %1 percent").arg(Math.round(root.chargeValue))
-                // Accessible.role: Accessible.StaticText
             }
         }
 
-        // The third row
+        // Bottom spacing section
         Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.preferredHeight: 0.5
         }
-
     }
 }
-
-
-

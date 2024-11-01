@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/Dashboard">/home/hhirca/DES-Instrument-Cluster/Dashboard/build/RPi-Debug/Dashboard</file>
-
-  </qresource>
-</RCC>

@@ -2,17 +2,22 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 
+/**
+ * @brief Footer component
+ * Displays gear state and navigation controls
+ */
 Item {
     id: root
 
     property string activeGear: "P"
 
+    // Main layout
     RowLayout {
         anchors.fill: parent
         anchors.topMargin: 0
         spacing: 0
 
-        // Footer Left - Navigation
+        // Left navigation buttons
         Item {
             id: leftNavigation
             Layout.alignment: Qt.AlignLeft | Qt.AlignTop
@@ -31,34 +36,23 @@ Item {
                         {icon: "qrc:/assets/img/icon-navi.png", alignment: Qt.AlignVCenter},
                         {icon: "qrc:/assets/img/icon-speed.png", alignment: Qt.AlignTop}
                     ]
-                    delegate: Item {
+                    delegate: NavigationButton {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-
-                        Button {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.verticalCenter: modelData.alignment === Qt.AlignVCenter ? parent.verticalCenter : undefined
-                            anchors.bottom: modelData.alignment === Qt.AlignBottom ? parent.bottom : undefined
-                            anchors.top: modelData.alignment === Qt.AlignTop ? parent.top : undefined
-                            icon.source: modelData.icon
-                            icon.width: leftNavigation.height * 0.35
-                            icon.height: leftNavigation.height * 0.35
-                            background: Item {}
-                            flat: true
-
-                            onClicked: console.log("Clicked:", modelData.icon)
-                        }
+                        iconSource: modelData.icon
+                        iconSize: leftNavigation.height * 0.35
+                        alignment: modelData.alignment
                     }
                 }
             }
         }
 
-        // Spacer Element
+        // Left spacer
         Item {
             Layout.fillWidth: true
         }
 
-        // Gear Indicator
+        // Gear indicator
         Item {
             id: gearContainer
             Layout.preferredWidth: parent.width * 0.175
@@ -71,44 +65,22 @@ Item {
 
                 Repeater {
                     model: ["P", "R", "N", "D"]
-                    delegate: Item {
-                        width: Math.max(contentText.width, contentText.height) * 1.2
-                        height: width
-
-                        Rectangle {
-                            id: gearCircle
-                            anchors.fill: parent
-                            color: "#f89e00"
-                            opacity: modelData === root.activeGear ? 0.3 : 0
-                            visible: modelData === root.activeGear
-                            radius: width / 2
-
-                            SequentialAnimation on opacity {
-                                loops: Animation.Infinite
-                                running: false // modelData === root.activeGear
-                                NumberAnimation { from: 0; to: 0.3; duration: 1000; easing.type: Easing.InOutQuad }
-                                NumberAnimation { from: 0.3; to: 0; duration: 1000; easing.type: Easing.InOutQuad }
-                            }
-                        }
-
-                        Text {
-                            id: contentText
-                            anchors.centerIn: parent
-                            text: modelData
-                            font.pixelSize: gearContainer.height * 0.5
-                            color: "white" // modelData === root.activeGear ? "#f89e00" : "white"
-                        }
+                    delegate: GearIndicator {
+                        size: Math.max(contentText.width, contentText.height) * 1.2
+                        gearText: modelData
+                        isActive: modelData === root.activeGear
+                        textHeight: gearContainer.height * 0.5
                     }
                 }
             }
         }
 
-        // Spacer Element
+        // Right spacer
         Item {
             Layout.fillWidth: true
         }
 
-        // Footer Right - Navigation
+        // Right navigation buttons
         Item {
             id: rightNavigation
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
@@ -127,26 +99,65 @@ Item {
                         {icon: "qrc:/assets/img/icon-phone.png", alignment: Qt.AlignVCenter},
                         {icon: "qrc:/assets/img/icon-lock.png", alignment: Qt.AlignBottom}
                     ]
-                    delegate: Item {
+                    delegate: NavigationButton {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-
-                        Button {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            anchors.verticalCenter: modelData.alignment === Qt.AlignVCenter ? parent.verticalCenter : undefined
-                            anchors.bottom: modelData.alignment === Qt.AlignBottom ? parent.bottom : undefined
-                            anchors.top: modelData.alignment === Qt.AlignTop ? parent.top : undefined
-                            icon.source: modelData.icon
-                            icon.width: rightNavigation.height * 0.35
-                            icon.height: rightNavigation.height * 0.35
-                            background: Item {}
-                            flat: true
-
-                            onClicked: console.log("Clicked:", modelData.icon)
-                        }
+                        iconSource: modelData.icon
+                        iconSize: rightNavigation.height * 0.35
+                        alignment: modelData.alignment
                     }
                 }
             }
+        }
+    }
+
+    // Component for navigation buttons
+    component NavigationButton: Item {
+        property string iconSource
+        property real iconSize
+        property int alignment
+
+        Button {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: alignment === Qt.AlignVCenter ? parent.verticalCenter : undefined
+            anchors.bottom: alignment === Qt.AlignBottom ? parent.bottom : undefined
+            anchors.top: alignment === Qt.AlignTop ? parent.top : undefined
+            
+            icon.source: iconSource
+            icon.width: iconSize
+            icon.height: iconSize
+            background: Item {}
+            flat: true
+
+            onClicked: console.log("Clicked:", iconSource)
+        }
+    }
+
+    // Component for gear indicators
+    component GearIndicator: Item {
+        property real size
+        property string gearText
+        property bool isActive
+        property real textHeight
+
+        width: size
+        height: size
+
+        Rectangle {
+            id: gearCircle
+            anchors.fill: parent
+            color: "#f89e00"
+            opacity: isActive ? 0.3 : 0
+            visible: isActive
+            radius: width / 2
+        }
+
+        Text {
+            id: contentText
+            anchors.centerIn: parent
+            text: gearText
+            font.pixelSize: textHeight
+            color: "white"
         }
     }
 }
